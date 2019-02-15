@@ -48,7 +48,7 @@
 #include "mission_feasibility_checker.h"
 #include "navigator_mode.h"
 
-#include <cfloat>
+#include <float.h>
 
 #include <dataman/dataman.h>
 #include <drivers/drv_hrt.h>
@@ -78,14 +78,6 @@ public:
 	enum mission_altitude_mode {
 		MISSION_ALTMODE_ZOH = 0,
 		MISSION_ALTMODE_FOH = 1
-	};
-
-	enum mission_yaw_mode {
-		MISSION_YAWMODE_NONE = 0,
-		MISSION_YAWMODE_FRONT_TO_WAYPOINT = 1,
-		MISSION_YAWMODE_FRONT_TO_HOME = 2,
-		MISSION_YAWMODE_BACK_TO_HOME = 3,
-		MISSION_YAWMODE_MAX = 4
 	};
 
 	bool set_current_offboard_mission_index(uint16_t index);
@@ -247,7 +239,6 @@ private:
 		(ParamFloat<px4::params::MIS_DIST_1WP>) _param_dist_1wp,
 		(ParamFloat<px4::params::MIS_DIST_WPS>) _param_dist_between_wps,
 		(ParamInt<px4::params::MIS_ALTMODE>) _param_altmode,
-		(ParamInt<px4::params::MIS_YAWMODE>) _param_yawmode,
 		(ParamInt<px4::params::MIS_MNT_YAW_CTL>) _param_mnt_yaw_ctl
 	)
 
