@@ -141,6 +141,7 @@ set(msg_files
 	vehicle_status_flags.msg
 	vehicle_trajectory_waypoint.msg
 	vtol_vehicle_status.msg
+	weather_station.msg
 	wind_estimate.msg
 	)
 
