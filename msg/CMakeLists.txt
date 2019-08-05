@@ -88,6 +88,7 @@ set(msg_files
 	position_setpoint.msg
 	position_setpoint_triplet.msg
 	power_button_state.msg
+	power_monitor.msg
 	pwm_input.msg
 	qshell_req.msg
 	qshell_retval.msg
@@ -141,6 +142,7 @@ set(msg_files
 	vehicle_status_flags.msg
 	vehicle_trajectory_waypoint.msg
 	vtol_vehicle_status.msg
+	wheel_encoders.msg
 	wind_estimate.msg
 	)
 
@@ -183,7 +185,7 @@ add_custom_command(OUTPUT ${uorb_headers}
 		-q
 	DEPENDS
 		${msg_files}
-		templates/uorb/msg.h.template
+		templates/uorb/msg.h.em
 		tools/px_generate_uorb_topic_files.py
 	COMMENT "Generating uORB topic headers"
 	WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
@@ -203,7 +205,7 @@ add_custom_command(OUTPUT ${uorb_sources}
 		-q
 	DEPENDS
 		${msg_files}
-		templates/uorb/msg.cpp.template
+		templates/uorb/msg.cpp.em
 		tools/px_generate_uorb_topic_files.py
 	COMMENT "Generating uORB topic sources"
 	WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
